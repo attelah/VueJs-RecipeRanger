@@ -17,7 +17,8 @@
             <input type="email" v-bind:value="email">
             <!-- Direktivet v-model är two way bound -->
             <input type="text" v-model="name">
-            <button type="submit">Submit</button>
+            <!-- Event modifiers på händelser är praktiska -->
+            <button type="submit" @click.prevent="processForm">Submit</button>
         </form>
 
         <!-- Händelsedirektivet heter v-on -->
@@ -37,7 +38,7 @@
   const { createApp } = Vue
 
   createApp({
-    data() {
+    data: function() {
       return {
         message: 'Hello Vue!',
         email: "lahepela@arcada.fi",
@@ -45,7 +46,14 @@
         state: 1,
         isVisible: true
       }
-    }
+    },
+      methods: {
+        processForm: function(event) {
+            //event.preventDefault(); // Vue devssarna förstod behovet av shorthand (@click.prevent)
+            alert("Submitted! Tack för visat intresse " + this.name);
+            this.isVisible = false; // Märk this och syntaxen med likamed =
+        }
+      }
   }).mount('#app')
 </script>
 </body>
