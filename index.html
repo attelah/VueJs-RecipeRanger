@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS Projekt 2</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" v-cloak>
+        {{ message }}
+        <form>
+            <label for="email">Email:</label>
+            <!-- Direktivet v-bind är one way data bound -->
+            <input type="email" v-bind:value="email">
+            <!-- Direktivet v-model är two way bound -->
+            <input type="text" v-model="name">
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Händelsedirektivet heter v-on -->
+        <br><button v-on:click="state += 1">Next</button>
+        <!-- Shorthand för händelsedirektivet är @ -->
+        <button @click="state -= 1">Back</button>
+        <!-- v-show är ett direktiv för display:none toggle -->
+        <p v-show="isVisible">{{ name }}</p>
+        <!-- Conditional v-if är praktisk för att växla mellan grafik -->
+        <input type="text" v-if="state == 1" :value="email">
+        <!-- State management med v-else-if och v-else -->
+        <p v-else-if="state == 2">Är du säker att du vill skicka formuläret</p>
+        <p v-else>Tack för att du skickat formuläret</p>
+    </div>
+
+<script>
+  const { createApp } = Vue
+
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!',
+        email: "lahepela@arcada.fi",
+        name: "Atte",
+        state: 1,
+        isVisible: true
+      }
+    }
+  }).mount('#app')
+</script>
+</body>
+</html>
