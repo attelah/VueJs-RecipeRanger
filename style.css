@@ -1,3 +1,35 @@
 [v-cloak] {
     display: none;
 }
+
+:root{
+    --url: url(media/cuttingboard-desk\ 3.jpg); 
+}
+
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+    background-size: cover;
+} 
+
+@media (max-width: 480px) {
+    body {
+        background-position: center right;
+        background-image: var(--url);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        background-position: center right;
+        background-image: var(--url);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    body {
+        background-position: center center;
+        background-image: var(--url);
+    }
+}

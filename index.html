@@ -17,26 +17,25 @@
 
 </head>
 
-<body>
-<div class="container p-2">
-  <div class="container-fluid p-2 text-center border">
-    <h1>Recipe Ranger</h1>
-  </div>
-
-  <div class="row pt-5">
+<body class="container p-2 text-white">
+  <h1 class="container-fluid p-5 text-center">Recipe Ranger</h1>
+  <!-- Ingredienser search bar -->
+  <div class="row p-5">
     <div class="col">
       <h2>Ingredienser</h2>
       <div class="input-group">
         <div class="input-group rounded">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" />
           <span class="input-group-text border-0" id="search-addon">
             <i class="fas fa-search"></i>
             <button type="button" class="btn btn-outline-secondary"></button>
           </span>
         </div>
       </div>
-      <div>
-        <div class="form-check">
+      <!--Ingredienser form-->
+      <div class=" lead pt-3">
+        <div class="form-check ">
           <input class="form-check-input" type="checkbox" value="" id="checkAgg">
           <label class="form-check-label" for="checkAgg">Ägg</label>
         </div>
@@ -79,13 +78,14 @@
         <input class="btn btn-primary" type="submit" value="Submit">
       </div>
     </div>
-
+    <!--Recept api-->
     <div class="col">
       <h2>Recept</h2>
     </div>
   </div>
 
-  <div class="container-fluid pt-5">
+  <div class="container-fluid p-5">
+    <!--Vue templates-->
     <div id="app" v-cloak>
       {{ message }}
       <signup-form />
@@ -101,48 +101,49 @@
       <!-- State management med v-else-if och v-else -->
       <p v-else-if="state == 2">Är du säker att du vill skicka formuläret</p>
       <p v-else>Tack för att du skickat formuläret</p>
+
+
+      <!--Vue templates end-->
+
     </div>
 
-</div>
 
-</div>
-  <script>
-    const { createApp } = Vue
 
-    const app = createApp({
-      data: function () {
-        return {
-          message: 'Hello Vue!',
-          email: "lahepela@arcada.fi",
-          state: 1,
-          isVisible: true
+    <script>
+      const { createApp } = Vue
+
+      const app = createApp({
+        data: function () {
+          return {
+            message: 'Hello Vue!',
+            email: "lahepela@arcada.fi",
+            state: 1,
+            isVisible: true
+          }
         }
-      }
-    })
+      })
 
-    // Definiera komponenter
-    app.component('signup-form', {
-      // Andra parametern är ett objekt, här skriver vi funktionaliteten
-      template:`<form>
-                   <label for='email'>Email:</label><input type='email' v-bind:value='email'><input type='text' v-model='name'> 
-                   <button type='submit' @click.prevent='processForm'>Submit</button>
-                </form>`,
-      data: function () {
-        return {
-          name: "Atte"
+      // Definiera komponenter
+      app.component('signup-form', {
+        // Andra parametern är ett objekt, här skriver vi funktionaliteten
+        template: "<form> <label for='email'>Email:</label><input type='email' v-bind:value='email'><input type='text' v-model='name'> <button type='submit' @click.prevent='processForm'>Submit</button></form>",
+        data: function () {
+          return {
+            name: "Atte"
+          }
+        },
+        methods: {
+          processForm: function (event) {
+            //event.preventDefault(); // Vue devssarna förstod behovet av shorthand (@click.prevent)
+            alert("Submitted! Tack för visat intresse " + this.name);
+            this.isVisible = false; // Märk this och syntaxen med likamed =
+          }
         }
-      },
-      methods: {
-        processForm: function (event) {
-          //event.preventDefault(); // Vue devssarna förstod behovet av shorthand (@click.prevent)
-          alert("Submitted! Tack för visat intresse " + this.name);
-          this.isVisible = false; // Märk this och syntaxen med likamed =
-        }
-      }
-    });
+      });
 
-    app.mount('#app')
-  </script>
+
+      app.mount('#app')
+    </script>
 
 </body>
 
