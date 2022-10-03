@@ -1,19 +1,15 @@
 <template>
-    <div id="profile">
-        <h1>Profile Page</h1>
-        <p>
-            This is your profile page!
-        </p>
-    </div>
+
+        <h1>{{title}}</h1>
+        <p>{{content}}</p>
+            
 </template>
 
 <script>
     export default {
-        name: 'profile',
-        data() {
-            return {};
-        }
-    }
+        name: 'profile-vue',     
+        props:['title', 'content']
+            };     
 </script>
 
 <style scoped>

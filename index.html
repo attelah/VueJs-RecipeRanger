@@ -123,7 +123,10 @@
     // Definiera komponenter
     app.component('signup-form', {
       // Andra parametern är ett objekt, här skriver vi funktionaliteten
-      template: "<form> <label for='email'>Email:</label><input type='email' v-bind:value='email'><input type='text' v-model='name'> <button type='submit' @click.prevent='processForm'>Submit</button></form>",
+      template:`<form>
+                   <label for='email'>Email:</label><input type='email' v-bind:value='email'><input type='text' v-model='name'> 
+                   <button type='submit' @click.prevent='processForm'>Submit</button>
+                </form>`,
       data: function () {
         return {
           name: "Atte"
