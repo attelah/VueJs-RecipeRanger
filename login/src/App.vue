@@ -1,6 +1,10 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png">
-            <Login >Logout</login>
+  <img src="../src/assets/logo.png">
+  <div id="login">
+  <h1>RECIPE RANGER</h1>
+            <Login ></login>
+            </div>
+  
   </template>
   
   <script>
@@ -13,6 +17,7 @@ import Login from './components/login.vue';
     name: 'App',
     components: {
     Login
+
 }
   }
   </script>
@@ -25,5 +30,8 @@ import Login from './components/login.vue';
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+  }
+  #login {
+    float:right;
   }
   </style>

@@ -1,36 +1,51 @@
 <template>
 
-        <h1>Login</h1>
+
+    <div id="login">
         <input type="text" name="username" v-model="input.username" placeholder="Username" />
         <input type="password" name="password" v-model="input.password" placeholder="Password" />
-        <button type="button" v-on:click="login()">Login</button>
+                 <button type="button" v-on:click="login()">Login</button>
+            <h2 v-show="isVisible">{{ message }}</h2>
+    </div>
 </template>
 
 <script>
+    
+    
+
     export default {
         name: 'LoginVue',
         data() {
             return {
                 input: {
                     username: "",
-                    password: ""
-                }
+                    password: "",
+                },/*
+                demoAccount:{
+                    username: "DemoRanger",
+                    password: "password123",
+                },
+                message:{
+                    message: "Welcome back " + this.demoAccount.username +"!",
+                    isVisible: false
+                }*/
             }
         },
         methods: {
             login() {
-                if(this.input.username != "" && this.input.password != "") {
-                    if(this.input.username == this.$parent.testAccount.username && this.input.password == this.$parent.testAccount.password) {
-                        this.$emit("authenticated", true);
-                        this.$router.replace({ name: "profile" });
+                if(this.input.username != "" && this.input.password == "") {
+                    if(this.input.username == this.demoAccount.username && this.input.password == this.demoAccount.password) {
+                        this.message.isVisible = true;
+                        
                     } else {
-                        console.log("Wrong username and / or password!");
+                        alert("Wrong username and / or password!");
                     }
                 } else {
-                    console.log("A username and password is required");
+                    alert("A username and password is required");
                 }
             }
         }
+        
     }
 </script>
 
