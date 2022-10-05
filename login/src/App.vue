@@ -1,7 +1,7 @@
 <template>
   <img src="../src/assets/logo.png">
-  <div id="login">
   <h1>RECIPE RANGER</h1>
+  <div id="login">
             <Login ></login>
             </div>
   
