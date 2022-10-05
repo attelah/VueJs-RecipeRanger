@@ -1,5 +1,6 @@
 <template>
-  <b-container class="content">
+<div class="body">
+  <b-container class="content text-white">
     <b-row>
       <b-col> <img style="float:left" src="../src/assets/logo.png"></b-col>
       <b-col>
@@ -19,6 +20,7 @@
     
 
   </b-container>
+</div>
 </template>
   
 <script>
@@ -45,9 +47,35 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 10px;
+  
 }
 
 #login {
   float: right;
+}
+
+body {
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; background-size: cover;
+} 
+@media (max-width: 480px) {
+    body {
+        background-image: url(./assets/cuttingboard-desk-3.jpg);
+        background-position: center right;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        background-image: url(./assets/cuttingboard-desk-3.jpg);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    body {
+        background-image: url(./assets/cuttingboard-desk-3.jpg);
+    }
 }
 </style>
