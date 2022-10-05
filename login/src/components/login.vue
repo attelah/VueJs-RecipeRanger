@@ -4,7 +4,7 @@
     <div id="login">
         <input type="text" name="username" v-model="input.username" placeholder="Username" />
         <input type="password" name="password" v-model="input.password" placeholder="Password" />
-                 <button type="button" v-on:click="login()">Login</button>
+        <button type="button" v-on:click="login()" style="float:right">Login</button>
             <h2 v-show="isVisible">{{ message }}</h2>
     </div>
 </template>
@@ -52,9 +52,8 @@
 <style scoped>
     #login {
         width: 500px;
-        border: 1px solid #CCCCCC;
-        background-color: #FFFFFF;
         margin: auto;
-        padding: 20px;
+        margin-top: 20px;
+        padding: 10px;
     }
 </style>
