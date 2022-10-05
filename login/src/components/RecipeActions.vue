@@ -1,14 +1,38 @@
 <template>
   <div class="recipe">
-    <h1>{{ title }}</h1>
-    <img :src="image" />
-    <p>{{ usedIngredients }}</p>
-    <p class="missing">{{ missingIngredients }}</p>
-    <p>{{ instructions }}</p>
-    <button @click='searchRecipe'>Search</button>
-    <button @click='lastRecipe'>&lt;-</button>
-    <button @click='nextRecipe'>-></button>
-    <p>Page {{ page }}/{{ pages }}</p>
+    <b-container>
+      <b-row>
+        <div class="image">
+          <img :src="image" />
+        </div>
+      </b-row>
+      <b-row>
+        <b-col class="margin">
+          <h1>{{ title }}</h1>
+          <b-row class="margin">
+            <h2>Ingredients</h2>
+            <p>{{ usedIngredients }}</p>
+            <h2>Missing ingredients</h2>
+            <p class="missing">{{ missingIngredients }}<br /></p>
+            <h2>Instructions</h2>
+            <p>{{ instructions }}</p>
+          </b-row>
+
+        </b-col>
+      </b-row>
+      <b-col>
+          <button @click='searchRecipe'>Search</button>
+          <button @click='lastRecipe'>&lt;-</button>
+          <button @click='nextRecipe'>-></button>
+      </b-col>
+
+      <b-col>
+        <br />
+        <p class="center">Page {{ page }}/{{ pages }}</p>
+      </b-col>
+    </b-container>
+
+
   </div>
 </template>
 
@@ -49,26 +73,38 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.margin {
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: large;
+}
+h2 {
+  font-size: large;
+  font-style: italic;
+  text-align: left;
+}
+
 .recipe {
   white-space: pre-wrap;
+}
+
+p {
+  text-align: left;
+}
+.center {
+  text-align: center;
 }
 
 .missing {
   color: rgb(255, 29, 29);
 }
 
-h3 {
-  margin: 40px 0 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+img {
+  max-width: 70%;
+  height: auto;
+  align-self: center;
 }
 
 a {
