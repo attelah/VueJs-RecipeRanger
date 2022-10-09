@@ -4,7 +4,7 @@
     <div id="login">
         <input type="text" name="username" v-model="input.username" placeholder="Username" />
         <input type="password" name="password" v-model="input.password" placeholder="Password" />
-        <button type="button" v-on:click="login()" >Login</button>
+        <b-button type="button" v-on:click="login()" >Login</b-button>
             <h2 v-show="isVisible">{{ message }}</h2>
     </div>
 </template>

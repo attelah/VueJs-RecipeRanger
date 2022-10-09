@@ -2,33 +2,28 @@
   <div class="recipe">
     <b-container>
       <b-row>
-        <div class="image">
-          <img :src="image" />
-        </div>
-      </b-row>
-      <b-row>
-        <b-col class="margin">
-          <h1>{{ title }}</h1>
-          <b-row class="margin">
-            <h2>Ingredients</h2>
+        <b-col class="margin fixed">
+          <h2 v-if="image">{{ title }}   <img :src="image"/></h2>
+          <b-row class="margin" v-if="image">
+            <h4 class="p5">Ingredients</h4>
             <p>{{ usedIngredients }}</p>
-            <h2>Missing ingredients</h2>
+            <h4>Missing ingredients</h4>
             <p class="missing">{{ missingIngredients }}<br /></p>
-            <h2>Instructions</h2>
+            <h4>Instructions</h4>
             <p>{{ instructions }}</p>
           </b-row>
 
         </b-col>
       </b-row>
       <b-col>
-          <button @click='searchRecipe'>Search</button>
-          <button @click='lastRecipe'>&lt;-</button>
-          <button @click='nextRecipe'>-></button>
+          <b-button @click='searchRecipe'>Search</b-button>
+          <b-button v-if="image" @click='lastRecipe'>&lt;-</b-button>
+          <b-button v-if="image" @click='nextRecipe'>-></b-button>
       </b-col>
 
       <b-col>
         <br />
-        <p class="center">Page {{ page }}/{{ pages }}</p>
+        <p class="center" v-if="image">Page {{ page }}/{{ pages }}</p>
       </b-col>
     </b-container>
 
@@ -77,13 +72,9 @@ export default {
   margin-top: 20px;
 }
 
-h1 {
-  font-size: large;
-}
-h2 {
-  font-size: large;
-  font-style: italic;
+h4 {
   text-align: left;
+  text-decoration: underline;
 }
 
 .recipe {
@@ -98,13 +89,14 @@ p {
 }
 
 .missing {
-  color: rgb(255, 29, 29);
+  color: rgb(255, 52, 52);
 }
 
 img {
-  max-width: 70%;
-  height: auto;
   align-self: center;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 
 a {

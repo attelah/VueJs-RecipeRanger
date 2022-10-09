@@ -79,21 +79,21 @@ body {
 
 @media (max-width: 480px) {
   body {
-    background-image: url(./assets/cuttingboard-desk-3.jpg);
+    background-image: url(./assets/cuttingboard-desk-3-dark.jpg);
     background-position: center right;
   }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
   body {
-    background-image: url(./assets/cuttingboard-desk-3.jpg);
+    background-image: url(./assets/cuttingboard-desk-3-dark.jpg);
   }
 }
 
 
 @media (min-width: 1024px) {
   body {
-    background-image: url(./assets/cuttingboard-desk-3.jpg);
+    background-image: url(./assets/cuttingboard-desk-3-dark.jpg);
   }
 }
 

@@ -5,6 +5,7 @@
   
 <script>
 import RecipeActions from './RecipeActions.vue'
+//import { ingredients } from './ingredients.vue'
 import { apikey } from '../../apikey.js'
 
 export default {
@@ -30,7 +31,7 @@ export default {
                 method: 'GET'
             };
             // Must await for the API response before running browseRecipes function
-            await fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + apikey + '&ingredients=beef,+pasta,+potato,+rice,+onion,+chicken,+tomato&number=2&ignorePantry=false&ranking=2', options)
+            await fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + apikey + '&ingredients=egg,+potato,+carrot,+onion,+pickles,+chicken,+sausage,+tomato+pasta+meat&number=5&ignorePantry=false&ranking=2', options)
                 .then(response => response.json())
                 .then(response => {
                     // Saves the response to RecipeActionsData.savedRecipes to avoid unneccesary spoonacular API calls
