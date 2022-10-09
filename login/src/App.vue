@@ -16,13 +16,17 @@
       <b-row>
         <b-col>
           <h3 class=" p-5">Ingredients</h3>
-          <!--Search bar-->
+          <!--Search bar
+
           <div class="container-fluid">
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Add ingredient" aria-label="Search">
               <button class="btn btn-success btn-md" type="submit">Add</button>
             </form>
-          </div>
+          </div> -->
+
+          <AddIngredients></AddIngredients> 
+          
           <!--Serach bar end-->
           <!--Checkboxes-->
         </b-col>
@@ -44,13 +48,15 @@
 
 import Login from './components/login.vue';
 import RecipeGetter from './components/RecipeGetter.vue';
+import AddIngredients from './components/AddIngredients.vue';
 
 export default {
   name: 'App',
   components: {
     Login,
-    RecipeGetter
-  }
+    RecipeGetter,
+    AddIngredients
+}
 }
 </script>
   
