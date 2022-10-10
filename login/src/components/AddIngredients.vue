@@ -3,14 +3,12 @@
         <div class="container-fluid">
             <form class="d-flex">
                 <input v-model="ingredient" class="form-control me-2" type="text" placeholder="Add ingredient" aria-label="Search">
-                <button  @click="addIngredient" class="btn btn-success btn-md" >Add</button>
-                
+                <button type="button" @click="addIngredient" class="btn btn-success btn-md" >Add</button>
             </form>
             <span>{{JSON.stringify(this.ingredients)}}</span>
             
         </div>
     </div>
-
 </template>
 
 <script>
@@ -24,8 +22,13 @@
             }
         },
         methods: {
-            addIngredient() {
-                this.ingredients.push (this.ingredient)
+            async addIngredient() {
+                if(this.ingredient == ""){
+                    alert("You need to add an ingredient")
+                } else {
+                    this.ingredients.push (this.ingredient)
+                }
+                
                 
             }
         }
