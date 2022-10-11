@@ -29,26 +29,7 @@
 
           <!--Serach bar end-->
           <!--Checkboxes-->
-          <div>
-            <Checkbox label="Ägg" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Kött" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Morot" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Tomat" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Smör" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Lök" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Vitlök" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Potatis" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Pasta" inputValue="react" v-model="selectedOptions" /><br />
-            <Checkbox label="Ris" inputValue="react" v-model="selectedOptions" />
-
-            <br /><br /><br />
-
-            <ul>
-              <li v-for="(option, index) of selectedOptions" :key="index">
-                {{ option }}
-              </li>
-            </ul>
-          </div>
+          <CheckBoxes />
           
         </b-col>
         <!--Ingredients end-->
@@ -70,7 +51,7 @@
 import Login from './components/login.vue';
 import RecipeGetter from './components/RecipeGetter.vue';
 import AddIngredients from './components/AddIngredients.vue';
-import Checkbox from './components/checkbox.vue';
+import CheckBoxes from './components/CheckBoxes.vue';
 
 export default {
   name: 'App',
@@ -78,9 +59,9 @@ export default {
     Login,
     RecipeGetter,
     AddIngredients,
-    Checkbox
-}
-}
+    CheckBoxes,
+},
+};
 </script>
   
 <style>

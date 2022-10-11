@@ -1,17 +1,14 @@
 <template>
-
     <label>
-        <input  type="checkbox" :value="inputValue"  v-model="model" />
+        <input type="checkbox" :value="inputValue"  v-model="model" />
         <span>{{ label }}</span>
     </label>
-
 </template>
 
 <script>
-
 export default {
-name: 'CheckBox',
-props: {
+  name: "CustomCheckBox",
+  props: {
     label: String,
     value: Array,
     inputValue: String,
@@ -28,8 +25,3 @@ props: {
   },
 };
 </script>
-
-<style scoped>
-
-
-</style>
