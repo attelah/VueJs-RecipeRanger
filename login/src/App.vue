@@ -11,18 +11,9 @@
       <b-row>
         <b-col>
           <h3 class=" p-5">Ingredients</h3>
-          <!--Search bar
-
-          <div class="container-fluid">
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Add ingredient" aria-label="Search">
-              <button class="btn btn-success btn-md" type="submit">Add</button>
-            </form>
-          </div> -->
-
+          
           <AddIngredients></AddIngredients> 
 
-          <!--Serach bar end-->
           <!--Checkboxes-->
           <div>
             <Checkbox label="Ägg" inputValue="react" v-model="selectedOptions" /><br />
