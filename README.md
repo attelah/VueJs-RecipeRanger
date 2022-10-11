@@ -19,6 +19,6 @@ Reciper Ranger is a SPA (Single Page Application) that allows a user to input or
 The main goals of the application is to reduce food waste in households, help with the households economy by reducing food waste and also to inspire "home chefs".
 
 ##### Functionality
-The application has checkboxes (with most of the common household ingredients) where you can select which ingredients you have. There is also a textinput where a user can select ingredients that don't have checkboxes. The selected ingredients will be called to an API that returns a few different recipes that include the selected ingredients. The API will also display ingredients that are missing.
+The application has checkboxes (with most of the common household ingredients) where you can select which ingredients you have. There is also a textinput where a user can select ingredients that don't have checkboxes. The selected ingredients will be called to an API that returns a few different recipes that include the selected ingredients. The API also returns a list of ingredients that are missing, the missing ingredients are displayed in red.
 
 The app has also a login functionality, that is for further development purposes.
