@@ -1,5 +1,5 @@
 # Recipe Ranger
-##Ramverk och Webbapplikationer (2022-2023) Projekt 2
+## Ramverk och Webbapplikationer (2022-2023) Projekt 2
 ## (SE)
 ##### Vad är det?
 Applikationen är en SPA (Single Page Application) som later användaren välja/mata in ingredienser som hen har i hemmet för att sedan få passliga recept på rätter som kan tillagas av dessa ingredienser. Appen skall till en början funka som en webbapplikation och/eller mobil applikation och senare föras till hushållsrobotar för att ge användare med hushållsrobot en mer uppslukande upplevelse.
