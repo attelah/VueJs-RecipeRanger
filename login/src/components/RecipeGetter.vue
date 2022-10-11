@@ -5,7 +5,7 @@
   
 <script>
 import RecipeActions from './RecipeActions.vue'
-//import { ingredients } from './ingredients.vue'
+//import store from '../main.js'
 import { apikey } from '../../apikey.js'
 
 export default {
@@ -27,11 +27,16 @@ export default {
     },
     methods: {
         searchRecipe: async function () {
+            // Get ingredients from storedIngredients store
+            let ingredients = "=";
+            for (let i = 0; i < this.$store.storedIngredients.length; i++) {
+                ingredients += (this.$store.storedIngredients[i] + ',+');
+            }
             const options = {
                 method: 'GET'
             };
             // Must await for the API response before running browseRecipes function
-            await fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + apikey + '&ingredients=egg,+potato,+carrot,+onion,+pickles,+chicken,+sausage,+tomato+pasta+meat&number=5&ignorePantry=false&ranking=2', options)
+            await fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + apikey + '&ingredients=' + ingredients + '&number=6&ignorePantry=false&ranking=2', options)
                 .then(response => response.json())
                 .then(response => {
                     // Saves the response to RecipeActionsData.savedRecipes to avoid unneccesary spoonacular API calls
@@ -104,7 +109,7 @@ export default {
             for (let l = 0; l < obj[this.RecipeActionsData.page - 1][0].steps.length; l++) {
                 this.RecipeActionsData.instructions += ((l + 1) + ". " + obj[this.RecipeActionsData.page - 1][0].steps[l].step + "\n");
             }
-        }
+        },
 
     },
     components: {
