@@ -11,7 +11,7 @@
 
 export default {
 name: 'CheckBox',
-props: {
+  props: {
     label: String,
     value: Array,
     inputValue: String,
@@ -26,7 +26,9 @@ props: {
       },
     },
   },
-};
+}
+
+;
 </script>
 
 <style scoped>
