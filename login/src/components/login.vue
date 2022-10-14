@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg pt-5">
         <div class="container-fluid">
             <a class="navbar-brand"><img width="50" src="../assets/chef.png"></a>
-            <h1 class="display-5" id="header">RECIPE RANGER</h1>
+            <h1 class="display-5 text-success" id="header">RECIPE RANGER</h1>
             <div v-bind="logger" v-if="this.logger.loggedOut">
                 <input type="text" name="username" v-model="input.username" placeholder="Username" />
                 <input type="password" name="password" v-model="input.password" placeholder="Password" />
