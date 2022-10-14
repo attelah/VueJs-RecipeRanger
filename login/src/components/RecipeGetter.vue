@@ -13,7 +13,7 @@ export default {
     data: function () {
         return {
             RecipeActionsData: {
-                title: 'You haven\'t searched for any recipe yet!',
+                title: '',
                 image: '',
                 usedIngredients: '',
                 missingIngredients: '',
@@ -29,6 +29,7 @@ export default {
         searchRecipe: async function () {
             // Return if no ingredients added
             if (!this.$store.storedIngredients) return;
+            if (this.RecipeActionsData.image) this.reset();
             // Get ingredients from storedIngredients store
             let ingredients = "=";
             for (let i = 0; i < this.$store.storedIngredients.length; i++) {
@@ -85,11 +86,7 @@ export default {
             console.log(obj[this.RecipeActionsData.page - 1].title, obj[this.RecipeActionsData.page - 1].missedIngredients, obj[this.RecipeActionsData.page - 1].usedIngredients);
 
             // Reset used and missing ingredients
-            this.RecipeActionsData.usedIngredients = '';
-            this.RecipeActionsData.missingIngredients = '';
-            this.RecipeActionsData.image = '';
-            this.RecipeActionsData.title = 'You haven\'t searched for any recipe yet!';
-            this.RecipeActionsData.instructions = '';
+            this.reset();
 
             // Pick out all the used ingredients
             for (let i = 0; i < obj[this.RecipeActionsData.page - 1].usedIngredients.length; i++) {
@@ -112,6 +109,13 @@ export default {
                 this.RecipeActionsData.instructions += ((l + 1) + ". " + obj[this.RecipeActionsData.page - 1][0].steps[l].step + "\n");
             }
         },
+        reset: function () {
+            this.RecipeActionsData.usedIngredients = '';
+            this.RecipeActionsData.missingIngredients = '';
+            this.RecipeActionsData.image = '';
+            this.RecipeActionsData.title = '';
+            this.RecipeActionsData.instructions = '';
+        }
 
     },
     components: {
