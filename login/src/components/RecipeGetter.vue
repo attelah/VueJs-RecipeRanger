@@ -27,6 +27,8 @@ export default {
     },
     methods: {
         searchRecipe: async function () {
+            // Return if no ingredients added
+            if (!this.$store.storedIngredients) return;
             // Get ingredients from storedIngredients store
             let ingredients = "=";
             for (let i = 0; i < this.$store.storedIngredients.length; i++) {
@@ -36,7 +38,7 @@ export default {
                 method: 'GET'
             };
             // Must await for the API response before running browseRecipes function
-            await fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + apikey + '&ingredients=' + ingredients + '&number=6&ignorePantry=false&ranking=2', options)
+            await fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + apikey + '&ingredients=' + ingredients + '&number=6&ignorePantry=false&ranking=1', options)
                 .then(response => response.json())
                 .then(response => {
                     // Saves the response to RecipeActionsData.savedRecipes to avoid unneccesary spoonacular API calls
