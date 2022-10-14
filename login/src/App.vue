@@ -10,7 +10,7 @@
       <!--Ingredients-->
       <b-row>
         <b-col>
-          <h3 class=" p-5">Ingredients</h3>
+          <h3 class=" p-3">Ingredients</h3>
           
           <AddIngredients></AddIngredients> 
 
@@ -22,7 +22,7 @@
 
         <!--Recipes-->
         <b-col>
-          <h3 class="pt-5">Recipes</h3>
+          <h3 class="pt-3">Recipes</h3>
           <RecipeGetter />
         </b-col>
       </b-row>
