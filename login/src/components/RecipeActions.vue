@@ -16,9 +16,9 @@
         </b-col>
       </b-row>
       <b-col>
-          <b-button @click='searchRecipe'>Search</b-button>
-          <b-button v-if="image" @click='lastRecipe'>&lt;-</b-button>
-          <b-button v-if="image" @click='nextRecipe'>-></b-button>
+          <b-button @click='searchRecipe' class="btn btn-success">Search</b-button>
+          <b-button v-if="image" @click='lastRecipe' class="btn btn-success">&lt;-</b-button>
+          <b-button v-if="image" @click='nextRecipe' class="btn btn-success">-></b-button>
       </b-col>
 
       <b-col>

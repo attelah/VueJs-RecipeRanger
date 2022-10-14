@@ -1,40 +1,40 @@
 <template>
     <div>
-        <CustomCheckBox label="Egg" inputValue="egg" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Meat" inputValue="meat" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Carrot" inputValue="carrot" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Tomato" inputValue="tomato" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Butter" inputValue="butter" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Onion" inputValue="onion" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Garlic" inputValue="garlic" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Potato" inputValue="potato" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Pasta" inputValue="pasta" v-model="selectedOptions" /><br />
-        <CustomCheckBox label="Rice" inputValue="rice" v-model="selectedOptions" />
-    
-        <br /><br /><br />
-
-        <ul>
-            <li v-for="(option, index) of selectedOptions" :key="index">
-             {{ option }}
-            </li>
-        </ul>
+        <input type="checkbox" id="egg" value="Egg" v-model="selectedOptions">
+        <label for="egg">Egg</label><br />
+        <input type="checkbox" id="meat" value="Meat" v-model="selectedOptions">
+        <label for="meat">Meat</label><br />
+        <input type="checkbox" id="carrot" value="Carrot" v-model="selectedOptions">
+        <label for="carrot">Carrot</label><br />
+        <input type="checkbox" id="tomato" value="Tomato" v-model="selectedOptions">
+        <label for="tomato">Tomato</label><br />
+        <input type="checkbox" id="butter" value="Butter" v-model="selectedOptions">
+        <label for="butter">Butter</label><br />
+        <input type="checkbox" id="onion" value="Onion" v-model="selectedOptions">
+        <label for="onion">Onion</label><br />
+        <input type="checkbox" id="garlic" value="Garlic" v-model="selectedOptions">
+        <label for="garlic">Garlic</label><br />
+        <input type="checkbox" id="potato" value="Potato" v-model="selectedOptions">
+        <label for="potato">Potato</label><br />
+        <input type="checkbox" id="pasta" value="Pasta" v-model="selectedOptions">
+        <label for="pasta">Pasta</label><br />
+        <input type="checkbox" id="rice" value="Rice" v-model="selectedOptions">
+        <label for="rice">Rice</label><br />
     </div>
 </template>
 
 <script>
-    import CustomCheckBox from './CustomCheckBox.vue';
-
     export default {
         name: 'CheckBoxes',
         props: {},
-        components: {
-            CustomCheckBox,
-        },
+        components: {},
         data() {
             return {
                 selectedOptions: [],
             };
         },
     };
+
+    
 </script>
 

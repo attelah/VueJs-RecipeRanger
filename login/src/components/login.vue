@@ -6,7 +6,7 @@
             <div v-bind="logger" v-if="this.logger.loggedOut">
                 <input type="text" name="username" v-model="input.username" placeholder="Username" />
                 <input type="password" name="password" v-model="input.password" placeholder="Password" />
-                <b-button type="button" @click="login()">Login</b-button>
+                <b-button type="button" @click="login()" class="btn btn-success">Login</b-button>
             </div>
             <div v-bind="logger" v-if="this.logger.loggedIn">
                 <h2>Welcome back {{account.username}}! Happy cooking! :)</h2>
