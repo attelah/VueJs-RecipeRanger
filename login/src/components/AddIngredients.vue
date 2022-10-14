@@ -11,9 +11,12 @@
     </div>
 </template>
 
+
+
 <script>
 
-    export default{
+
+    export default {
         name: 'AddIngredient',
         data() {
             return {
@@ -26,7 +29,9 @@
                 if(this.ingredient == ""){
                     alert("You need to add an ingredient")
                 } else {
-                    this.ingredients.push (this.ingredient)
+                    this.ingredients.push(this.ingredient)
+                    // Store to Vuex store
+                    this.$store.commit('add', this.ingredients);
                 }
                 
                 

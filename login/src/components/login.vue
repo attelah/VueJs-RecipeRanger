@@ -1,15 +1,15 @@
 <template>
     <nav class="navbar navbar-expand-lg pt-5">
         <div class="container-fluid">
-            <a class="navbar-brand"><img width="50" src="../assets/logo.png"></a>
-            <h1 class="display-5">RECIPE RANGER</h1>
-            <div v-bind="logger" v-if="LoggedOut">
+            <a class="navbar-brand"><img width="50" src="../assets/chef.png"></a>
+            <h1 class="display-5 text-success" id="header">RECIPE RANGER</h1>
+            <div v-bind="logger" v-if="this.logger.loggedOut">
                 <input type="text" name="username" v-model="input.username" placeholder="Username" />
                 <input type="password" name="password" v-model="input.password" placeholder="Password" />
-                <b-button type="button" @click="login()">Login</b-button>
+                <b-button type="button" @click="login()" class="btn btn-success">Login</b-button>
             </div>
-            <div v-bind="logger" v-if="loggedIn">
-                <h2>Welcome back {{account.username}}!</h2>
+            <div v-bind="logger" v-if="this.logger.loggedIn">
+                <h2>Welcome back {{account.username}}! Happy cooking! :)</h2>
                 <b-button type="button" @click="logout()">Logout</b-button>
             </div>
         </div>
@@ -40,9 +40,9 @@ export default {
     methods: {
         login() {
             if (this.input.username != "" && this.input.password != "") {
-                if (this.input.username == this.logger.DemoUser && this.input.password == this.logger.password) {
-                    this.loggedIn = true;
-                    this.loggedOut = false;
+                if (this.input.username == this.account.username && this.input.password == this.account.password) {
+                    this.logger.loggedIn = true;
+                    this.logger.loggedOut = false;
                 } else {
                     alert("Wrong username and / or password!");
                 }
@@ -51,8 +51,8 @@ export default {
             }
         },
         logout() {
-            this.loggedIn = false,
-                this.loggedOut = true
+            this.logger.loggedIn = false,
+                this.logger.loggedOut = true
         }
     }
 };
@@ -60,6 +60,12 @@ export default {
 </script>
 
 <style scoped>
+
+#header 
+{
+    font-family: fantasy;
+}
+
 /*
     #login {
         width: 500px;
