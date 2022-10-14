@@ -21,7 +21,7 @@
 
         <!--Recipes-->
         <b-col>
-          <h3 class="pt-5">Recipes</h3>
+          <h3 class="pt-3">Recipes</h3>
           <RecipeGetter />
           <button @click= "isVisible = !isVisible" class="btn btn-success btn-md">Hide Ingredients</button>
         </b-col>
