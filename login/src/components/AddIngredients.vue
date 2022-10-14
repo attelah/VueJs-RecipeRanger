@@ -5,7 +5,11 @@
                 <input v-model="ingredient" class="form-control me-2" type="text" placeholder="Add ingredient" aria-label="Search">
                 <button type="button" @click="addIngredient" class="btn btn-success btn-md" >Add</button>
             </form>
-            <p v-for="(ingredient, index) in ingredients" :key="index" >{{ingredient}}</p>
+              <div class="pt-3">
+                <ul class="text-start h5" v-for="(ingredient, index) in ingredients" :key="index">
+                    <li>{{ingredient}}</li>
+                </ul>
+            </div>
             
         </div>
     </div>
@@ -28,7 +32,7 @@
                     this.ingredients.push(this.ingredient)
                     // Store to Vuex store
                     this.$store.commit('add', this.ingredients);
-                    this.ingredient ="";
+                    this.ingredient = "";
                 }                         
             }
         }
