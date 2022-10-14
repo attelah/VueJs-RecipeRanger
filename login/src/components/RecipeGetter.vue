@@ -29,19 +29,22 @@ export default {
         searchRecipe: async function () {
             // Return if no ingredients added
             if (!this.$store.storedIngredients && !this.$store.checkBoxes) return;
+            // Reset search
             if (this.RecipeActionsData.image) this.reset();
-            // Get ingredients from storedIngredients store
+            // Get ingredients from the store
             let addedIngredients = "";
             let checkedIngredients = "";
-            for (let i = 0; i < this.$store.storedIngredients.length; i++) {
-                addedIngredients += (this.$store.storedIngredients[i] + ',+');
+            if (this.$store.storedIngredients) {
+                for (let i = 0; i < this.$store.storedIngredients.length; i++) {
+                    addedIngredients += (this.$store.storedIngredients[i] + ',+');
+                }
             }
-            for (let i = 0; i < this.$store.storedCheckboxes.length; i++) {
-                checkedIngredients += (this.$store.storedCheckboxes[i] + ',+');
+            if (this.$store.storedCheckboxes) {
+                for (let i = 0; i < this.$store.storedCheckboxes.length; i++) {
+                    checkedIngredients += (this.$store.storedCheckboxes[i] + ',+');
+                }
             }
             let ingredients = addedIngredients + checkedIngredients;
-            console.log("Ingredients: " + ingredients);
-            console.log(this.$store.storedCheckboxes);
             const options = {
                 method: 'GET'
             };
