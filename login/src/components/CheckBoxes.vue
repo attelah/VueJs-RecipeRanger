@@ -60,5 +60,14 @@
     };
 </script>
 <style scoped>
+.form-check-input:focus {
+    border-color: #198754;
+    box-shadow:  0px 0px 8px rgb(32, 201, 122);
+}
+.form-check-input:checked {
+    background-color: #198754;
+    border-color: white;
+    box-shadow:  0px 0px 8px rgb(32, 201, 122);
+}
 </style>
 
