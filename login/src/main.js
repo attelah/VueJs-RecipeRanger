@@ -15,12 +15,20 @@ app.mount('#app');
 const store = createStore({
     storedIngredients() {
         return {
-            storedIngredients: ['']
+            storedIngredients: [''],
         }
+    },
+    storedCheckboxes() {
+      return {
+        storedCheckboxes: ['']
+      }
     },
     mutations: {
         add (storedIngredients, ingredients) {
           this.storedIngredients = ingredients;
+        },
+        addCheckBoxes (storedCheckboxes, ingredients) {
+          this.storedCheckboxes = ingredients;
         }
       }
 })
