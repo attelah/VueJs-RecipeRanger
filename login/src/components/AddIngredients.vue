@@ -38,3 +38,9 @@
         }
     }
 </script>
+<style scoped>
+.form-control:focus {
+  border-color: #198754;
+  box-shadow: 0px 0px 8px rgb(32, 201, 122);
+}
+</style>
