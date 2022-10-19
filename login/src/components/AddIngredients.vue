@@ -6,9 +6,9 @@
                 <button type="button" @click="addIngredient" class="btn btn-success btn-md" >Add</button>
             </form>
               <div class="pt-3">
-                <ul class="text-start h5" v-for="(ingredient, index) in ingredients" :key="index">
-                    <li>{{ingredient}}</li>
-                </ul>
+                <span class="text-start h5" v-for="(ingredient, index) in ingredients" :key="index">
+                    <p>- {{ingredient}}</p>
+                </span>
             </div>
             
         </div>

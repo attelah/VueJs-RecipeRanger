@@ -2,10 +2,8 @@
   <div class="body">
     <b-container class="text-white">
       <!--Navbar-->
-
           <LoginVue></LoginVue>
 
-      <!--Navbar end-->
       <!--Ingredients-->
       <b-row>
         <b-col v-show="isVisible">
@@ -17,16 +15,14 @@
           <CheckBoxes />
           
         </b-col>
-        <!--Ingredients end-->
 
         <!--Recipes-->
         <b-col>
-          <h3 class="pt-3">Recipes</h3>
+          <h3 class="pt-5">Recipes</h3>
           <RecipeGetter />
           <button @click= "isVisible = !isVisible" class="btn btn-success btn-md">Hide Ingredients</button>
         </b-col>
       </b-row>
-      <!--Recipes end-->
 
     </b-container>
   </div>
