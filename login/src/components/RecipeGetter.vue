@@ -27,8 +27,6 @@ export default {
     },
     methods: {
         searchRecipe: async function () {
-            // Return if no ingredients added
-            if (!this.$store.storedIngredients && !this.$store.checkBoxes) return;
             // Reset search
             if (this.RecipeActionsData.image) this.reset();
             // Get ingredients from the store
