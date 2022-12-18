@@ -1,6 +1,8 @@
 # Recipe Ranger
 ## Ramverk och Webbapplikationer (2022-2023) Projekt 2
 
+![image](https://user-images.githubusercontent.com/4623879/208313056-cabd6135-320b-4399-a46d-4c2dd4d467ec.png)
+
 ## (ENG)
 
 ##### What is it?
